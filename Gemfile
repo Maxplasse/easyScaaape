@@ -68,3 +68,4 @@ gem 'faker', group: [ :test ]
 gem 'factory_bot_rails', group: [ :test ]
 gem 'rexml'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'

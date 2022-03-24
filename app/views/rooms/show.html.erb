@@ -1,0 +1,20 @@
+
+<div class="container" style="margin-top: 150px">
+  <div>
+    <%= link_to "Retourner à la liste des chambres", rooms_path %>
+    <p>Cette chambre est faite pour vous</p>
+    <div>
+      <%= @room.hotel.name %>
+    </div>
+    <div class="container-form">
+      <div class="card-form">
+        <h4>Réserver cette chambre</h4>
+        <%= simple_form_for [@room, @booking] do |f| %>
+            <%= f.input :starts_at, as: :string, input_html: { id: "start_date" }, label: false %>
+            <%= f.input :ends_at, as: :string, input_html: { id: "end_date" }, label: false %>
+            <%= f.submit "Réserver", class:"button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
