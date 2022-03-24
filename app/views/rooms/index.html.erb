@@ -1,1 +1,8 @@
-<h1>Toutes nos chambres</h1>
+<div class="container" style="margin-top: 150px">
+  <h1>Toutes nos chambres</h1>
+  <% @rooms.each do |room| %>
+    <%= room.price_per_night %>
+    <%= room.capacity %>
+    <%= room.hotel.name %>
+  <% end %>
+</div>

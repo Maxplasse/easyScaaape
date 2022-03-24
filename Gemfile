@@ -67,3 +67,4 @@ gem 'rails-controller-testing', group: [ :test ]
 gem 'faker', group: [ :test ]
 gem 'factory_bot_rails', group: [ :test ]
 gem 'rexml'
+gem 'dotenv-rails', groups: [:development, :test]
