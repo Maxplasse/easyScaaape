@@ -1,18 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top navbar-easyscape" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar" data-navbar-home-value="<%= action_name == "home"%>">
+  <%= link_to "Nos offres", rooms_path, class:"navbar-brand" %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <%= link_to "EasySCAPE", root_path, class:"title-navbar" %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+         <li class="nav-item mx-5 navbar-link">
+          <%= link_to "Mon profil", mon_profil_path %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>

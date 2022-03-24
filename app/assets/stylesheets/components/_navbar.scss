@@ -1,12 +1,93 @@
+.navbar-easyscape {
+  &.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 1.3em;
+    font-weight: 400;
+  }
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  transition: 0.1s background-color ease;
+  height: 90px;
+
+  .title-navbar {
+    opacity: 0;
+    top: 20px;
+    text-decoration: none;
+    left: calc(50% - 71px);
+    position: absolute;
+  }
+
+  .navbar-brand {
+    background-color: white;
+    font-weight: 400;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 21px;
+    padding: 10px 18px;
+    color: black;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+  }
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  border-bottom: solid 1px silver;
+  .navbar-link a {
+    color: black !important;
+  }
+
+  .title-navbar {
+    opacity: 1;
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: $headers-font;
+    position: relative;
+    left: 42px;
+    top: 0px;
+  }
+
+  .navbar-brand {
+    background-color: black;
+    font-weight: 400;
+    color: white;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 21px;
+    padding: 10px 18px;
+    margin: 0px 2px;
+    opacity: 1;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+  }
+
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-nav {
+  align-items: center;
 }
