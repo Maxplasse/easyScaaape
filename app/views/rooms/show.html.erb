@@ -1,18 +1,58 @@
-
-<div class="container" style="margin-top: 150px">
-  <div>
-    <%= link_to "Retourner à la liste des chambres", rooms_path %>
-    <p>Cette chambre est faite pour vous</p>
-    <div>
-      <%= @room.hotel.name %>
+<div class="profile-background-color">
+  <div class="container container-easyscape">
+    <div class="link-index">
+      <%= link_to rooms_path do %>
+        <div>
+          <p><i class="fas fa-arrow-left"></i> Retourner à la liste des chambres</p>
+        </div>
+      <% end %>
     </div>
-    <div class="container-form">
-      <div class="card-form">
+
+    <div class="row">
+      <div class="col-8">
+        <div class="card-details">
+          <strong><h4>Détails :</h4></strong>
+          <p>Cette chambre vous est proposé pour seulement <%= @room.price_per_night %>€ par nuit.</p>
+          <p>Hôtel : <%= @room.hotel.name %></p>
+        </div>
+        <div class="card-details">
+          <h4>Quelques informations sur la chambre !</h4>
+          <%= image_tag @room.photo %>
+        </div>
+      </div>
+      <div class="col-3 card-form">
         <h4>Réserver cette chambre</h4>
         <%= simple_form_for [@room, @booking] do |f| %>
             <%= f.input :starts_at, as: :string, input_html: { id: "start_date" }, label: false %>
             <%= f.input :ends_at, as: :string, input_html: { id: "end_date" }, label: false %>
             <%= f.submit "Réserver", class:"button" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="second-title-margin" style="text-align: center">
+      <h4>Voir les autres chambres de cet hôtel</h4>
+      <div class="cards">
+        <% @room.hotel.rooms.each do |room| %>
+          <% if room != @room %>
+            <div class="card-room">
+              <%= image_tag room.photo %>
+              <div class="card-description">
+                <p>Hôtel : <%= room.hotel.name %></p>
+                <br>
+                <div class="d-flex" style="justify-content: space-between;">
+                  <div>
+                    <p><i class="fas fa-user"></i> <%= pluralize(room.capacity, "personne", "personnes") %></p>
+                  </div>
+                  <div>
+                    <strong><%= room.price_per_night %>€</strong>
+                  </div>
+                </div>
+                <div class="button-card">
+                  <%= link_to "Plus d'infos", room_path(room) %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

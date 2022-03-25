@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @room = Room.find(params[:room_id])
     @booking = Booking.new(booking_params)
     @booking.room = @room
+    @booking.user = current_user
     @booking.save
     if @booking.save
       redirect_to room_path(@room), notice: "Demande de réservation envoyée !"

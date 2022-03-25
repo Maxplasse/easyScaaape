@@ -1,11 +1,47 @@
-<div class="main-banner">
-  <h1 class="title">EasySCAPE</h1>
-</div>
+<div class="index-background-color">
+  <div class="main-banner">
+    <h1 class="title">E<i>asy</i>SCAPE</h1>
+    <h5>
+    <span class="second-title" data-controller="typed-js"></span>
+    </h5>
+  </div>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6 second-title-margin">
+        <h3>Laissez vous guider sans vous ruiner !</h3>
+      </div>
+      <div class="container-carousel">
+        <div class="card-description-easyscape">
+          <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 10 %>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active carousel-image">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1464890100898-a385f744067f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmxhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="First slide">
+              </div>
+              <div class="carousel-item carousel-image">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1529408632839-a54952c491e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmxhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Second slide">
+              </div>
+              <div class="carousel-item carousel-image">
+                <img class="d-block w-100" src="https://images.unsplash.com/photo-1622866306950-81d17097d458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZmxhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

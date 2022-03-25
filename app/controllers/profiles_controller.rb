@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
+
   def show
-    @user = current_user
+    @my_bookings = Booking.all.select { |booking| booking.user == current_user }
   end
 end

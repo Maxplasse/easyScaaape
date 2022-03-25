@@ -1,24 +1,26 @@
 <div class="index-background-color">
-  <div class="container" style="margin-top: 150px">
+  <div class="container container-easyscape">
     <h1>Toutes nos chambres</h1>
     <div class="cards">
       <% @rooms.each do |room| %>
-        <% link_to room_path(room) %>
-          <div class="card-room">
-            <%= image_tag room.photo %>
-            <div class="card-description">
-              <%= room.hotel.name %>
-              <div class="d-flex" style="justify-content: space-between;">
-                <div>
-                  <%= pluralize(room.capacity, "personne", "personnes") %>
-                </div>
-                <div>
-                  <strong><%= room.price_per_night %>€</strong>
-                </div>
+        <div class="card-room">
+          <%= image_tag room.photo %>
+          <div class="card-description">
+            <p>Hôtel : <%= room.hotel.name %></p>
+            <br>
+            <div class="d-flex" style="justify-content: space-between;">
+              <div>
+                <p><i class="fas fa-user"></i> <%= pluralize(room.capacity, "personne", "personnes") %></p>
               </div>
-              <%= link_to "Plus d'infos", room_path(room), class:"button-card" %>
+              <div>
+                <strong><%= room.price_per_night %>€</strong>
+              </div>
+            </div>
+            <div class="button-card">
+              <%= link_to "Plus d'infos", room_path(room) %>
             </div>
           </div>
+        </div>
       <% end %>
     </div>
   </div>
