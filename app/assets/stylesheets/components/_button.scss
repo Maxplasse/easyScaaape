@@ -8,6 +8,18 @@
   }
 }
 
+.button-card-form {
+  background-color: $lightbrown;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 2px;
+  width: 100%;
+  border: antiquewhite;
+  a {
+    text-decoration: none;
+  }
+}
+
 
 
 .button-card {
@@ -23,8 +35,6 @@
     color: white;
   }
 }
-
-
 
 .link-index {
   a {

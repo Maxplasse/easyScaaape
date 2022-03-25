@@ -10,7 +10,7 @@
   padding: 15px;
   width: 240px;
   background-color: white;
-  margin-bottom: 370px;
+  margin-bottom: 570px;
 }
 
 .card-details {
@@ -60,6 +60,12 @@
   font-size: 14px;
   opacity: .7;
   margin: 0;
+  font-weight: 500;
+}
+
+.card-name {
+  color: $lightbrown;
+  font-weight: 500;
 }
 
 

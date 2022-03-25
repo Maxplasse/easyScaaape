@@ -12,20 +12,47 @@
       <div class="col-8">
         <div class="card-details">
           <strong><h4>Détails :</h4></strong>
-          <p>Cette chambre vous est proposé pour seulement <%= @room.price_per_night %>€ par nuit.</p>
-          <p>Hôtel : <%= @room.hotel.name %></p>
+          <p>🔥 Chambre double avec lit king size, salle de bain avec baignoire, produits de toilette offerts. Chambre proposée par <span class="card-name"><%= @room.hotel.name %></span> au prix de <span class="card-name"><%= @room.price_per_night %>€</span> par nuit.</p>
+          <p>🥐 Se faire réveiller par un petit-déjeuner continental au restaurant ou en terrasse, avec boisson chaude, jus de fruits, viennoiseries, yaourt et salade de fruits.</p>
+          <p>🌳 Situation idéale pour profiter de la ville.</p>
+          <p>🚲 Location de vélos en option à demander auprès de l'hôtel dès votre arrivée.</p>
         </div>
         <div class="card-details">
-          <h4>Quelques informations sur la chambre !</h4>
+          <h4>Notre chambre</h4>
           <%= image_tag @room.photo %>
         </div>
       </div>
       <div class="col-3 card-form">
         <h4>Réserver cette chambre</h4>
         <%= simple_form_for [@room, @booking] do |f| %>
-            <%= f.input :starts_at, as: :string, input_html: { id: "start_date" }, label: false %>
-            <%= f.input :ends_at, as: :string, input_html: { id: "end_date" }, label: false %>
-            <%= f.submit "Réserver", class:"button" %>
+        <%= f.input :starts_at, as: :string, input_html: { id: "start_date" }, label: false, placeholder: "Date d'arrivée" %>
+        <%= f.input :ends_at, as: :string, input_html: { id: "end_date" }, label: false, placeholder: "Date de départ" %>
+        <button type="button" class="button-card-form" data-toggle="modal" data-target="#exampleModal">
+          Réserver
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dernière étape !</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <strong><p>Récapitulatif de votre séjour :</p></strong>
+                <p>Félicitations ! 🎉🎉 Votre demande de réservation pour l'hôtel <%= @room.hotel.name %> a bien été prise en comtpe par E<i>asy</i>SCAPE.</p>
+                 Le prix par nuit est de <%= @room.price_per_night %>€.
+                Vous pourrez voyager à <%= pluralize(@room.capacity, "personne", "personnes") %>.
+                <p>Vous retrouverez le suivi de votre réservation sur votre espace profil.</p>
+                <p>E<i>asy</i>SCAPE vous remercie pour votre fidélité !💃🏽</p>
+              </div>
+              <div class="modal-footer">
+                <%= f.submit "Confirmer la réservation", class:"button" %>
+              </div>
+            </div>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>

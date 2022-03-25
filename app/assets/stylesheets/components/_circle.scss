@@ -1,0 +1,39 @@
+.circle1 {
+  background-color: $lightbrown;
+  width: 250px;
+  height: 250px;
+  border-radius: 3.75em 4.5em 8.65em 5.5em / 106px 83px 145px 50px;
+  margin: 50px 30px;
+
+  p{
+    color: white;
+    margin: 40px 10px;
+    text-align: center;
+  }
+}
+
+
+.circle2 {
+  background-color: $lightbrown;
+  width: 250px;
+  height: 250px;
+  border-radius: 10.75em 6.5em 7.65em 10.5em / 106px 83px 145px 50px;
+  margin: 50px 30px;
+  p{
+    color: white;
+    margin: 40px 10px 0px;
+    text-align: center;
+  }
+}
+.circle3 {
+  background-color: $lightbrown;
+  width: 250px;
+  height: 250px;
+  border-radius: 10.75em 4.5em 6.65em 6.5em / 106px 83px 145px 50px;
+  margin: 50px 30px;
+  p{
+    color: white;
+    margin: 40px 10px;
+    text-align: center;
+  }
+}
