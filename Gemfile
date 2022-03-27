@@ -64,8 +64,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
-gem 'faker', group: [ :test ]
+# gem 'faker', group: [ :test ]
 gem 'factory_bot_rails', group: [ :test ]
 gem 'rexml'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem 'faker'
